@@ -115,7 +115,7 @@ func AddRoute(app *gin.Engine) {
 		}
 		query := fmt.Sprintf(Query, -trans.Amount)
 		Db.Exec(query)
-		log.Printf("Barrier TransOutV2 amount: %d", -trans.Amount)
+		log.Printf("Without Barrier TransOutV2 amount: %d", -trans.Amount)
 		c.JSON(400, "")
 	})
 	app.POST(API+"/WithBarrierTransOutV2", func(c *gin.Context) {
